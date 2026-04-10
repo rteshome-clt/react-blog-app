@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router';
-import { ThemeProvider } from './Components/common/ThemeContext.jsx';
+import { ThemeProvider } from './Components/common/ThemeProvider.jsx';
 import CommonLayout from './layouts/CommonLayout.jsx';
 import ContactPage from './Components/contact/ContactPage.jsx';
 import PostList from './Components/postList/PostList.jsx';

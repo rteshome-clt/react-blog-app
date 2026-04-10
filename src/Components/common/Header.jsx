@@ -1,6 +1,6 @@
 import React from "react";
 import styles from '../css/Header.module.css';
-import { useTheme } from '../common/ThemeContext.jsx';
+import { useTheme } from "./ThemeContext";
 import { Link } from "react-router";
 
 function Header() {
