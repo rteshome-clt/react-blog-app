@@ -1,0 +1,101 @@
+
+.comment {
+    font-weight: bold;
+}
+
+.text {
+    padding:10px;
+    height:80px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    font-size: 14px;
+    
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.button {
+    width: 120px;
+    padding: 6px 0px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.namebox {
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.commentsSection {
+    margin: 0px;
+    font-size: 20px;
+}
+
+.commentsList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 0px;
+    padding: 0px;
+}
+
+.comments {
+    list-style: none;
+    border-radius: 8px ;
+    border: 1px solid gray;
+    background-color: rgb(223, 178, 94);
+    width: fit-content;
+}
+
+.comments h4 {
+    margin: 5px ;
+}
+
+.comments p {
+    margin: 0 5px;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+}
+
+:global(body.dark) .commentPage {
+    background-color: #1f2937;
+    color: white;
+}
+
+:global(body.dark) .text,
+:global(body.dark) .namebox {
+    background-color: #111827;
+    color: white;
+    border: 1px solid gray;
+}
+
+:global(body.dark) .commentsSection,
+:global(body.dark) .commentsList,
+:global(body.dark) .comment {
+    color: white;
+    background-color: #1f2937;
+}
+
+:global(body.dark) .button {
+    background-color: darkred;
+    color: white;
+}
+
+:global(body.dark) .comments {
+    background-color: rgb(117, 48, 48);
+    color: rgb(218, 216, 216);
+}
+:global(body.dark) .comments p {
+    color: rgb(187, 187, 187);
+}

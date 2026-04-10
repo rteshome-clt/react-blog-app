@@ -1,0 +1,48 @@
+.contactPage{
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    gap: 5px;
+}
+
+.text,
+.namebox,
+.email {
+    padding: 12px;
+    font-size: 16px;
+}
+
+.submit {
+    background-color: rgb(38, 38, 239);
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+
+:global(body.dark) .contactPage {
+    background-color: #1f2937;
+}
+
+:global(body.dark) .text,
+:global(body.dark) .namebox,
+:global(body.dark) .email {
+    background-color: #111827;
+    color: white;
+    border: 1px solid gray;
+}
+
+:global(body.dark) .submit {
+    background-color: brown;
+    color: gray;
+    border-radius: 6px;
+}

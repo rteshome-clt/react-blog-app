@@ -1,0 +1,30 @@
+.postlist {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    gap: 20px;
+    font-size: 20px;
+}
+.title {
+    font-size: 50px;
+}
+.list {
+    text-decoration: none;
+    color: black;
+    padding: 16px;
+    border-radius: 8px ;
+    border: 1px solid gray;
+    background-color: rgb(122, 122, 227);
+    width: 70%;
+}
+
+:global(body.dark) .postlist {
+    background-color: #1f2937;
+    color: white;
+}
+
+:global(body.dark) .list {
+    color: white;
+    background-color: #596d8a;
+}

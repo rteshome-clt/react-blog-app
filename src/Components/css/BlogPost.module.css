@@ -1,0 +1,12 @@
+.blog {   
+    min-height: 100vh;
+    margin: 60px auto;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+ 
+:global(body.dark) .blog {
+    background-color: #1f2937;
+    color: white;
+}

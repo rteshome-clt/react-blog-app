@@ -1,0 +1,16 @@
+.footer {
+    background-color: darkblue;
+    color: white;
+    text-align: center;
+    padding: 20px;    
+} 
+
+:global(body.light) .footer {
+    background-color: darkblue;
+    color: white;
+}
+
+:global(body.dark) .footer {
+    background-color: #0f172a;
+    color: #f9fafb;
+}
