@@ -6,19 +6,32 @@ function Homepage() {
   return (
     <div className={Style.homepage}>
       
-      
-      <h1 className={Style.homepageTitle}>Welcome to My Blog App</h1>
-      <p className={Style.description}>This app ...</p>
+      <div className={Style.content}>
+        <h1 className={Style.homepageTitle}>Welcome to My Blog App</h1>
+        <p className={Style.description}>This app allows you to browse blog posts and share your thoughts.</p>
+      </div>
 
-      <Link to="/posts" className={Style.postButton}>
-        <button>Explore Blogs</button>
-      </Link>
-      <Link to="/login" className={Style.loginButton}>
-        <button>Login</button>
-      </Link>
-      <Link to="/contact" className={Style.contactButton}>
-        <button>Contact Us</button>
-      </Link>
+      <nav className={Style.buttons}>
+        <ul>
+          <li>
+            <Link to="/posts" className={Style.postButton}>
+              <button>Explore Blogs</button>
+            </Link>
+          </li>
+        </ul>
+        <ul className={Style.bottomButtons}>
+          <li>
+            <Link to="/login" className={Style.loginButton}>
+              <button>Login</button>
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" className={Style.contactButton}>
+              <button>Contact Us</button>
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }

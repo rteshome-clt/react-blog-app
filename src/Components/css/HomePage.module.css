@@ -3,6 +3,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .hompageTitle {
@@ -15,29 +17,55 @@
     line-height: 1.6;
 }
 
+.content {
+    padding: 3rem 4rem;
+    border-radius: 25px;
+    text-align: center;
+    max-width: 700px;
+    background-color: rgb(53, 53, 137);
+    color: white;
+}
+
+.buttons ul{
+    gap: 50px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.buttons button {
+    background-color: rgb(122, 122, 227);
+    color: white;
+    font-size: 1.2rem;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
 .postButton {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-.loginButton {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.bottomButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.contactButton {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+:global(body.dark) .homepage {
+    background-color: #1f2937;
+    color: white;
+}   
+
+:global(body.dark) .content {
+    background-color: #161d2c;
+    color: white;
+}
+
+:global(body.dark) .buttons button {
+    color: white;
+    background-color: #596d8a;
 }
