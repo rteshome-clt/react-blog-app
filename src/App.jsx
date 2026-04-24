@@ -7,13 +7,15 @@ import ContactPage from './Components/contact/ContactPage.jsx';
 import PostList from './Components/postList/PostList.jsx';
 import Homepage from './Components/homepage/Homepage.jsx';
 import BlogPost from './Components/blog/BlogPostPage.jsx';
+import LoginPage from './login/LoginPage.jsx';
 
 function App() {
   return (
     <ThemeProvider>
       <Routes>
         <Route element ={<CommonLayout/>}>
-          <Route path="/" element={<Homepage/>} />
+          <Route path="/" element={<Homepage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/posts" element={<PostList/>}/>
           <Route path="/posts/:postId" element={<BlogPost />} />

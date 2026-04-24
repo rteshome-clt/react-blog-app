@@ -14,10 +14,15 @@ function Header() {
                     <li>
                         <Link to="/">Home</Link>
                     </li>
-                    <li><Link to="/posts/1">Post</Link></li>
+                    <li>
+                        <Link to="/posts">Post</Link>
+                    </li>
                     <li>
                         <Link to="/contact">Contact</Link>
-                    </li>     
+                    </li>  
+                    <li>
+                        <Link to="/login">Login</Link>
+                    </li>   
                     <button onClick={toggleTheme}>
                         Toggle Theme: 
                         {theme === 'dark' ? ' dark' : ' light'}
