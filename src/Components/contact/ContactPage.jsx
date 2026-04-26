@@ -10,9 +10,23 @@ function ContactPage() {
     message: '',
   });
 
+  const [submitted, setSubmitted] = useState(false);
+
   const subitForm = (e) => {
     e.preventDefault();
-    console.log(formInput);
+    if (
+      !formInput.name.trim() || 
+      !formInput.email.trim() || 
+      !formInput.message.trim()
+    ) {
+      return;
+    }
+    setSubmitted(true);
+    setFormInput({
+      name: '',
+      email: '',
+      message: '',
+    });
   } 
 
   return (
@@ -37,6 +51,13 @@ function ContactPage() {
           onChange={(e) => setFormInput({...formInput, message: e.target.value})}
           required/>
         <button className={Styles.submit}>Submit</button>
+        
+        {submitted && (
+            <p className={Styles.confirmation}>
+              Thank you for contacting us!
+            </p>
+          )
+      }
       </form>
     </div>
   );

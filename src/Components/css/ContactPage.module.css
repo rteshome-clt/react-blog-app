@@ -28,6 +28,12 @@
     border-radius: 6px;
 }
 
+.confirmation {
+    margin-top: 20px;
+    font-size: 18px;
+    color: green;
+    text-align: center;
+}
 
 :global(body.dark) .contactPage {
     background-color: #1f2937;
