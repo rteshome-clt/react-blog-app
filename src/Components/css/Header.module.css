@@ -15,10 +15,13 @@
 
 .header ul {
     display: flex;
+    flex-direction: row;
     list-style: none;
     gap: 30px; 
     margin: 0;
     padding: 0;
+    text-align: center;
+    align-items: center;
 }
 
 .header a, 
@@ -30,6 +33,22 @@
     cursor: pointer;
 }
 
+.authSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.authSection p {
+        margin: 0;
+    }
+
+.header li:hover, 
+.header button:hover {
+    text-decoration: underline;
+}
+
 :global(body.dark) .header {
     background-color: #111827;
     color: white;
@@ -38,4 +57,21 @@
 :global(body.dark) .header a,
 :global(body.dark) .header button {
     color: white;
+}
+
+@media (max-width: 650px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .header nav {
+        padding: 10px 0;
+    }
+
+    .header ul {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

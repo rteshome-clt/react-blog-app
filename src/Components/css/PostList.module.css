@@ -6,17 +6,20 @@
     gap: 20px;
     font-size: 20px;
 }
+
 .title {
     font-size: 50px;
 }
+
 .list {
     text-decoration: none;
     color: black;
     padding: 16px;
     border-radius: 8px ;
-    border: 1px solid gray;
+    border: 2px solid gray;
     background-color: rgb(122, 122, 227);
     width: 70%;
+    margin-left: 5px;
 }
 
 :global(body.dark) .postlist {
@@ -27,4 +30,21 @@
 :global(body.dark) .list {
     color: white;
     background-color: #596d8a;
+}
+
+@media (max-width: 650px) {
+    .postlist {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .list {
+        width: 70%;
+        max-width: 300px;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
 }

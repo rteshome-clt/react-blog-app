@@ -43,6 +43,10 @@
     cursor: pointer;
 }
 
+.buttons a {
+    text-decoration: none;
+}
+
 .postButton {
     display: flex;
     justify-content: center;
@@ -68,4 +72,38 @@
 :global(body.dark) .buttons button {
     color: white;
     background-color: #596d8a;
+}
+
+@media (max-width: 650px) {
+    .homepage{
+        padding: 20px;
+        margin-top: 40px;
+        flex-direction: column;
+    }
+
+    .content {
+        padding: 2rem;
+        max-width: 100%;
+    }
+
+    .hompageTitle {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }   
+
+    .buttons ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;    
+        gap: 20px;
+    }
+
+    .buttons li {
+        width: 200%;
+        display: flex;
+        justify-content: center;
+    }
 }

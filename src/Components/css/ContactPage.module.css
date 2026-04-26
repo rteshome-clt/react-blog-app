@@ -46,3 +46,25 @@
     color: gray;
     border-radius: 6px;
 }
+
+@media (max-width: 650px) {
+    .contactPage {
+        padding: 20px;
+    }
+
+    .form {
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .text,
+    .namebox,
+    .email {
+        font-size: 14px;
+    }
+
+    .submit {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

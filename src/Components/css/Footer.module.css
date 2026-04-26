@@ -14,3 +14,10 @@
     background-color: #0f172a;
     color: #f9fafb;
 }
+
+@media (max-width: 650px) {
+    .footer {
+        padding: 10px;
+        font-size: 14px;
+    }
+}

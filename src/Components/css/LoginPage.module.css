@@ -50,3 +50,28 @@
     color: gray;
     border-radius: 6px;
 }
+
+@media (max-width: 650px) {
+    .container {
+        align-self: center;
+    }
+
+    .title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .input {
+        width: 80%;
+        max-width: 300px;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .submitButton {
+        width: 50%;
+        max-width: 300px;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}

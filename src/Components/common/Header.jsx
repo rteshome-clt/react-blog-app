@@ -23,7 +23,7 @@ function Header() {
                     <li>
                         <Link to="/contact">Contact</Link>
                     </li>  
-                    <li>
+                    <li className={styles.authSection}>
                         {username ? (
                             <>
                                 <p>Hello, {username}!</p>
