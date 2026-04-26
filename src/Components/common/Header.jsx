@@ -8,6 +8,7 @@ function Header() {
     const { theme, toggleTheme } = useTheme();
     const username = useUsername();
     const {logout} = useAuth();
+
     return (
         <div className={styles.header}>
             <h1>My Blog</h1> 
@@ -24,7 +25,10 @@ function Header() {
                     </li>  
                     <li>
                         {username ? (
-                            <p onClick={logout}>Logout</p> 
+                            <>
+                                <p>Hello, {username}!</p>
+                                <p onClick={logout}>Logout</p>
+                            </>
                         ) : (
                             <Link to="/login">Login</Link>
                         )} 

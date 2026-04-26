@@ -3,11 +3,10 @@ import IndividualComment from './IndividualComment.jsx';
 import Styles from '../css/Comments.module.css'
 //import { useParams } from "react-router";
 import axios from "axios";
+import { useAuth } from "../authWrapper/AuthContext";
 
- 
 function Comments({postId}) {
-    //const params = useParams();
-    //console.log(params.post_id);
+    const { isAuthenticated, user } = useAuth();
 
     const [comment, setComment] = useState({
         name: '',
@@ -37,8 +36,8 @@ function Comments({postId}) {
     }, [postId]);
 
     const postComment = async () => {
-        if (!comment.name.trim() || !comment.content.trim()) {
-            alert("Both Name and Comment fields must be filled.");
+        if (!comment.content.trim()) {
+            alert("Comment field must be filled.");
             return;
         }
 
@@ -46,7 +45,7 @@ function Comments({postId}) {
             const res = await axios.post(
                 `https://jsonplaceholder.typicode.com/posts/${postId}/comments`,
                 {
-                    name: comment.name,
+                    name: user.username,
                     body: comment.content,
                     postId: postId,
                 }
@@ -55,12 +54,12 @@ function Comments({postId}) {
                 ...commentList,
                 {
                     id: res.data.id,
-                    name: comment.name,
+                    name: user.username,
                     body: comment.content,
                 },
             ]);
             setComment({
-                name: "",
+                ...comment,
                 content: "",
             });
             textboxRef.current.focus();
@@ -72,27 +71,33 @@ function Comments({postId}) {
     return (
         <div className={Styles.commentPage}>
             <h2 className={Styles.comment}>Comments</h2>
-            <input
-                className={Styles.namebox}
-                value={comment.name}
-                onChange={(e) => setComment({ ...comment, name: e.target.value })}
-                placeholder="Name"
-            />
-            <div className={Styles.form}>
-            <textarea
-                className={Styles.text}
-                ref={textboxRef}
-                value={comment.content}
-                onChange={(e) => setComment( {...comment, content: e.target.value})}
-                placeholder="Add a comment"
-            />
-            <button 
-                className={Styles.button}
-                onClick={postComment}
-                type="button"
-            >Submit</button>
-            </div>
-
+            {isAuthenticated ? (
+                <>
+                    <input
+                        className={Styles.namebox}
+                        value={"Name: " + user.username}
+                        readOnly
+                    />
+                    <div className={Styles.form}>
+                    <textarea
+                        className={Styles.text}
+                        ref={textboxRef}
+                        value={comment.content}
+                        onChange={(e) => setComment( {...comment, content: e.target.value})}
+                        placeholder="Add a comment"
+                    />
+                    <button 
+                        className={Styles.button}
+                        onClick={postComment}
+                        type="button">
+                            Submit
+                    </button>
+                    </div>
+                </>
+                ) : (
+                    <p className={Styles.loginPrompt}>Please log in to add a comment.</p>
+                )}
+            
             {loading ? (
                 <p>Loading</p>
             ) : commentList.length === 0 ? (

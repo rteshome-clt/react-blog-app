@@ -1,18 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Styles from "../Components/css/LoginPage.module.css";
 import { useAuth } from "../Components/authWrapper/AuthContext";
+import { useNavigate } from "react-router";
 
 function LoginPage() {
-  const {login} = useAuth();
+  const {login, isAuthenticated} = useAuth();
+  const navigate = useNavigate();
+
   const [userData, setUserData] = useState({
     username: "",
     password: ""
   });
+
+  const [error, setError] = useState("");
+
   const onSubmit = (e) => {
     e.preventDefault();
-    //console.log(userData);
-    login(userData.username);
+    
+    if (!userData.username.trim() || !userData.password.trim()) {
+      setError("Please enter both username and password.");
+      return;
+    }
+
+    if (userData.password.length < 4) {
+      setError("Password must be at least 4 characters.");
+      return;
+    }
+
+    login(userData.username, userData.password);
+    navigate("/posts");
   }
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/posts");
+    }
+  }, [isAuthenticated, navigate]);
 
   return (
     <div className={Styles.container}>
@@ -24,7 +47,6 @@ function LoginPage() {
           type="text"
           value={userData.username}
           onChange={(e) => setUserData({ ...userData, username: e.target.value })}
-          placeholder="Username"
         />
         <input
           placeholder="Password"
@@ -33,6 +55,8 @@ function LoginPage() {
           onChange={(e) => setUserData({ ...userData, password: e.target.value })}
         
         />
+
+        {error && <p className={Styles.error}>{error}</p>}
         <button type="submit" className={Styles.submitButton}>Submit</button>
       </form>
       
